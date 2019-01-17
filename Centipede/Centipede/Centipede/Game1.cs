@@ -20,11 +20,17 @@ namespace Centipede
         SpriteBatch spriteBatch;
 
         Texture2D centipedeSpriteSheet;
+        Random rand = new Random();
+
+        List<Mushroom> mushrooms;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferHeight = 1000;
+            graphics.PreferredBackBufferWidth = 800;
+
         }
 
         /// <summary>
@@ -36,7 +42,11 @@ namespace Centipede
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            mushrooms = new List<Mushroom>();
+            for (int i = 0; i < 40; i++)
+            {
+                mushrooms.Add(new Mushroom(Content, this, rand));
+            }
             base.Initialize();
         }
 
@@ -74,7 +84,13 @@ namespace Centipede
                 this.Exit();
 
             // TODO: Add your update logic here
+            for (int i = 0; i < 39; i++)
+            {
+                if (mushrooms[i].mushroom == mushrooms[i + 1].mushroom)
+                    mushrooms[i].randShroom(rand);
+                
 
+            }
             base.Update(gameTime);
         }
 
@@ -87,7 +103,12 @@ namespace Centipede
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin();
+            for (int i = 0; i < 40; i++)
+            {
+                spriteBatch.Draw(mushrooms[i].spriteSheet, mushrooms[i].mushroom, mushrooms[i].s_mushroom, Color.White);
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
