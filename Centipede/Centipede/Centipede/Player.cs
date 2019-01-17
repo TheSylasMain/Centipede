@@ -17,15 +17,18 @@ namespace Centipede
         float x, y;
         float speed = 5; //spped of player movement
         float scale = 3; //scale of player
+        int windowWidth, windowHeight;
         Texture2D image;
 
         Rectangle source = new Rectangle(0, 1, 16, 16);
 
-        public Player(float x, float y, Texture2D image)
+        public Player(float x, float y, Texture2D image, int windowWidth, int windowHeight)
         {
             this.x = x;
             this.y = y;
             this.image = image;
+            this.windowWidth = windowWidth;
+            this.windowHeight = windowHeight;
         }
 
         /// <summary>
@@ -38,6 +41,7 @@ namespace Centipede
 
         public void Update(GameTime gameTime, KeyboardState key, KeyboardState keyOld)
         {
+            //movement
             if (key.IsKeyDown(Keys.Right) && key.IsKeyUp(Keys.Left))
             {
                 x += speed;
@@ -54,11 +58,30 @@ namespace Centipede
             {
                 y += speed;
             }
+
+            //wall collision
+            Rectangle rect = Rect;
+            if (rect.Right>windowWidth)
+            {
+                x = windowWidth - rect.Width;
+            }
+            else if(rect.Left<0)
+            {
+                x = 0;
+            }
+            if(rect.Bottom>windowHeight)
+            {
+                y = windowHeight - rect.Height;
+            }
+            else if(rect.Top<0)
+            {
+                y = 0;
+            }
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(image, new Rectangle((int)x, (int)y, (int)(source.Width * scale), (int)(source.Height * scale)), source, Color.White);
+            spriteBatch.Draw(image, Rect, source, Color.White);
         }
 
         public float X
@@ -84,6 +107,14 @@ namespace Centipede
             set
             {
                 y = value;
+            }
+        }
+
+        public Rectangle Rect
+        {
+            get
+            {
+                return new Rectangle((int)x, (int)y, (int)(source.Width * scale), (int)(source.Height * scale));
             }
         }
 

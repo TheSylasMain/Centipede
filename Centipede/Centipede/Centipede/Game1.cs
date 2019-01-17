@@ -19,6 +19,10 @@ namespace Centipede
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        KeyboardState key, keyi;
+
+        Player player;
+
         Texture2D centipedeSpriteSheet;
 
         public Game1()
@@ -35,7 +39,7 @@ namespace Centipede
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            keyi = Keyboard.GetState();
 
             base.Initialize();
         }
@@ -51,6 +55,8 @@ namespace Centipede
 
             // TODO: use this.Content to load your game content here
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
+
+            player = new Player(0, 0, centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         }
 
         /// <summary>
@@ -73,7 +79,10 @@ namespace Centipede
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            keyi = key;
+            key = Keyboard.GetState();
+
+            player.Update(gameTime, key, keyi);
 
             base.Update(gameTime);
         }
@@ -86,7 +95,9 @@ namespace Centipede
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
+            player.Draw(gameTime, spriteBatch);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
