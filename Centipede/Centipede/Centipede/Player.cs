@@ -22,6 +22,14 @@ namespace Centipede
 
         Rectangle source = new Rectangle(0, 1, 16, 16);
 
+        /// <summary>
+        /// note: player area is at the bottom 1/6.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="image"></param>
+        /// <param name="windowWidth"></param>
+        /// <param name="windowHeight"></param>
         public Player(float x, float y, Texture2D image, int windowWidth, int windowHeight)
         {
             this.x = x;
@@ -73,9 +81,9 @@ namespace Centipede
             {
                 y = windowHeight - rect.Height;
             }
-            else if(rect.Top<0)
+            else if(rect.Top<windowHeight/6*5)//can't move above bottom 1/6 of the screen
             {
-                y = 0;
+                y = windowHeight / 6 * 5;
             }
         }
 
