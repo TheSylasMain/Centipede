@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MissleLaunch", "MissleLaunch\MissleLaunch\MissleLaunch.csproj", "{5E2BB535-32E6-4A07-9790-F32F1BAC4BE8}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "MissleLaunchContent", "MissleLaunch\MissleLaunchContent\MissleLaunchContent.contentproj", "{2320B546-3D85-4634-AE8C-3E2AAC71967A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E2BB535-32E6-4A07-9790-F32F1BAC4BE8}.Debug|x86.ActiveCfg = Debug|x86
+		{5E2BB535-32E6-4A07-9790-F32F1BAC4BE8}.Debug|x86.Build.0 = Debug|x86
+		{5E2BB535-32E6-4A07-9790-F32F1BAC4BE8}.Release|x86.ActiveCfg = Release|x86
+		{5E2BB535-32E6-4A07-9790-F32F1BAC4BE8}.Release|x86.Build.0 = Release|x86
+		{2320B546-3D85-4634-AE8C-3E2AAC71967A}.Debug|x86.ActiveCfg = Debug|x86
+		{2320B546-3D85-4634-AE8C-3E2AAC71967A}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
