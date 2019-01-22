@@ -12,22 +12,31 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Centipede
 {
-    class Mushroom 
+    class Mushroom : Game
     {
         public Texture2D spriteSheet;
         public Rectangle s_mushroom; // source rectangle
         public Rectangle mushroom; // location on screen
 
-        public Mushroom(ContentManager content, Game game, Random r) 
+        public Mushroom(ContentManager content, Game game, Random r)
         {
             spriteSheet = content.Load<Texture2D>("Arcade - Centipede - General Sprites");
             s_mushroom = new Rectangle(68, 72, 8, 8);
-            mushroom = new Rectangle(r.Next(800) + 1, r.Next(1000) + 1, 40, 40);
+            mushroom = new Rectangle(r.Next(760) + 1, r.Next(700) + 1, 40, 40);
+        }
+
+        public Mushroom(ContentManager content, Game game, int x, int y)
+        {
+            spriteSheet = content.Load<Texture2D>("Arcade - Centipede - General Sprites");
+            s_mushroom = new Rectangle(68, 72, 8, 8);
+            mushroom = new Rectangle(x, y, 40, 40);
         }
 
         public void randShroom(Random r)
         {
-            mushroom = new Rectangle(r.Next(800) + 1, r.Next(1000) + 1, 40, 40);
+            mushroom = new Rectangle(r.Next(760) + 1, r.Next(800) + 1, 40, 40);
         }
+
+        
     }
 }

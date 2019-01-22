@@ -43,7 +43,7 @@ namespace Centipede
         {
             // TODO: Add your initialization logic here
             mushrooms = new List<Mushroom>();
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < 25; i++)
             {
                 mushrooms.Add(new Mushroom(Content, this, rand));
             }
@@ -84,12 +84,14 @@ namespace Centipede
                 this.Exit();
 
             // TODO: Add your update logic here
-            for (int i = 0; i < 39; i++)
-            {
-                if (mushrooms[i].mushroom == mushrooms[i + 1].mushroom)
-                    mushrooms[i].randShroom(rand);
-                
 
+            //generate shrooms in different places
+            for (int i = 0; i < 24; i++)
+            {
+                if (mushrooms[i].mushroom.Intersects(mushrooms[i + 1].mushroom))
+                {
+                    mushrooms[i].randShroom(rand);
+                }
             }
             base.Update(gameTime);
         }
@@ -100,11 +102,11 @@ namespace Centipede
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            for (int i = 0; i < 40; i++)
+            for (int i = 0; i < 25; i++)
             {
                 spriteBatch.Draw(mushrooms[i].spriteSheet, mushrooms[i].mushroom, mushrooms[i].s_mushroom, Color.White);
             }
