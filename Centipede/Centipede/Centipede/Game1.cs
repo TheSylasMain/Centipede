@@ -18,19 +18,22 @@ namespace Centipede
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        
+        Texture2D spriteSheetText;
+        Rectangle fullrect, stillMissleRect, shootingMissleRect, shotMissleRect, destrect, destrect2;
+        bool shot = false;
+        List<Rectangle> lazers = new List<Rectangle>();
+        
+        KeyboardState key, keyi;
+
+        Player player;
 
         Texture2D centipedeSpriteSheet;
-        Random rand = new Random();
-
-        List<Mushroom> mushrooms;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferHeight = 1000;
-            graphics.PreferredBackBufferWidth = 800;
-
         }
 
         /// <summary>
@@ -41,12 +44,14 @@ namespace Centipede
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            mushrooms = new List<Mushroom>();
-            for (int i = 0; i < 40; i++)
-            {
-                mushrooms.Add(new Mushroom(Content, this, rand));
-            }
+            keyi = Keyboard.GetState();
+            fullrect = new Rectangle(0, 0, 207, 105);
+            shootingMissleRect = new Rectangle(0, 3, 100, 100);
+            stillMissleRect = new Rectangle(104, 52, 100, 50);
+            shotMissleRect = new Rectangle(105, 0, 100, 48);
+            destrect = new Rectangle(100, 400, 100, 100);
+            destrect2 = new Rectangle(100, 300, 100, 100);
+            
             base.Initialize();
         }
 
@@ -61,6 +66,8 @@ namespace Centipede
 
             // TODO: use this.Content to load your game content here
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
+            spriteSheetText = this.Content.Load<Texture2D>("full");
+            player = new Player(0, 0, centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         }
 
         /// <summary>
@@ -83,13 +90,35 @@ namespace Centipede
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
-            for (int i = 0; i < 39; i++)
-            {
-                if (mushrooms[i].mushroom == mushrooms[i + 1].mushroom)
-                    mushrooms[i].randShroom(rand);
-                
+            keyi = key;
+            key = Keyboard.GetState();
 
+            player.Update(gameTime, key, keyi);
+            if (key.IsKeyDown(Keys.Space) && key.IsKeyDown(Keys.Space))
+            {
+                Missile newMissile = new Missile();
+
+                newMissile.build(player.X+15, player.Y-16);
+
+                lazers.Add(newMissile.getNewMissle());
+            }
+            if (lazers.Count > 0)
+            {
+                for (int i = 0; i < lazers.Count; i++)
+                {
+
+                    Rectangle hold = lazers.ElementAt(i);
+                    hold.Y -= 3;
+                    lazers.Remove(lazers.ElementAt(i));
+                    if (lazers.Count > 0)
+                    {
+                        lazers.Insert(i, hold);
+                    }
+                    else
+                    {
+                        lazers.Add(hold);
+                    }
+                }
             }
             base.Update(gameTime);
         }
@@ -100,15 +129,19 @@ namespace Centipede
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
-            spriteBatch.Begin();
-            for (int i = 0; i < 40; i++)
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
+            player.Draw(gameTime, spriteBatch);
+           
+            
+            foreach (Rectangle missile in lazers)
             {
-                spriteBatch.Draw(mushrooms[i].spriteSheet, mushrooms[i].mushroom, mushrooms[i].s_mushroom, Color.White);
+                spriteBatch.Draw(spriteSheetText, missile, shotMissleRect, Color.White);
             }
+
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }

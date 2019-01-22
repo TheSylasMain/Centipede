@@ -7,8 +7,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
-      <Time>2019-01-16T07:28:40-06:00</Time>
+      <Output>\\Fisd-student1\hs\chs\148439\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
+      <Time>2019-01-22T13:05:05.9597825-06:00</Time>
+    </Item>
+    <Item>
+      <Source>full.png</Source>
+      <Name>full</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>\\Fisd-student1\hs\chs\148439\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\full.xnb</Output>
+      <Time>2019-01-22T13:57:58.7596649-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -17,10 +26,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\CentipedeContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>\\Fisd-student1\hs\chs\148439\Documents\GitHub\Centipede\Centipede\Centipede\CentipedeContent\</RootDirectory>
+      <LoggerRootDirectory>\\Fisd-student1\hs\chs\148439\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\</LoggerRootDirectory>
+      <IntermediateDirectory>\\Fisd-student1\hs\chs\148439\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>\\Fisd-student1\hs\chs\148439\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

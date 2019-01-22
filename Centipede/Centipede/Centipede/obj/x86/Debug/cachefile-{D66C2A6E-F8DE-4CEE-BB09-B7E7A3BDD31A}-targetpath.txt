@@ -1,1 +1,2 @@
 Content\Arcade - Centipede - General Sprites.xnb
+Content\full.xnb
