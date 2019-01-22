@@ -28,10 +28,6 @@ namespace Centipede
 
         Player player;
 
-        KeyboardState key, keyi;
-
-        Player player;
-
         Texture2D centipedeSpriteSheet;
 
         public Game1()
@@ -49,7 +45,6 @@ namespace Centipede
         protected override void Initialize()
         {
             keyi = Keyboard.GetState();
-<<<<<<< HEAD
             fullrect = new Rectangle(0, 0, 207, 105);
             shootingMissleRect = new Rectangle(0, 3, 100, 100);
             stillMissleRect = new Rectangle(104, 52, 100, 50);
@@ -57,9 +52,6 @@ namespace Centipede
             destrect = new Rectangle(100, 400, 100, 100);
             destrect2 = new Rectangle(100, 300, 100, 100);
             
-=======
-
->>>>>>> Player-Movement
             base.Initialize();
         }
 
@@ -74,11 +66,8 @@ namespace Centipede
 
             // TODO: use this.Content to load your game content here
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
-<<<<<<< HEAD
             spriteSheetText = this.Content.Load<Texture2D>("full");
-=======
 
->>>>>>> Player-Movement
             player = new Player(0, 0, centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         }
 
@@ -105,13 +94,12 @@ namespace Centipede
             keyi = key;
             key = Keyboard.GetState();
 
+            //update player
             player.Update(gameTime, key, keyi);
-<<<<<<< HEAD
+
             if (key.IsKeyDown(Keys.Space) && key.IsKeyDown(Keys.Space))
             {
                 Missile newMissile = new Missile();
-=======
->>>>>>> Player-Movement
 
                 newMissile.build(player.X+15, player.Y-16);
 
@@ -147,19 +135,14 @@ namespace Centipede
             GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
+
             player.Draw(gameTime, spriteBatch);
-           
             
             foreach (Rectangle missile in lazers)
             {
                 spriteBatch.Draw(spriteSheetText, missile, shotMissleRect, Color.White);
             }
 
-<<<<<<< HEAD
-=======
-            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
-            player.Draw(gameTime, spriteBatch);
->>>>>>> Player-Movement
             spriteBatch.End();
 
             base.Draw(gameTime);
