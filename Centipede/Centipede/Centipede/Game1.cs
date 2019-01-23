@@ -65,7 +65,7 @@ namespace Centipede
 
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
 
-            player = new Player(0, 0, centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            player = new Player(centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         }
 
         /// <summary>

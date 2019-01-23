@@ -30,10 +30,10 @@ namespace Centipede
         /// <param name="image"></param>
         /// <param name="windowWidth"></param>
         /// <param name="windowHeight"></param>
-        public Player(float x, float y, Texture2D image, int windowWidth, int windowHeight)
+        public Player(Texture2D image, int windowWidth, int windowHeight)
         {
-            this.x = x;
-            this.y = y;
+            x = windowWidth / 2 - Rect.Width / 2;
+            y = windowHeight / 6 * 5 + windowHeight / 6 / 2 - Rect.Height / 2;
             this.image = image;
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
@@ -110,6 +110,9 @@ namespace Centipede
             }
         }
 
+        /// <summary>
+        /// The box surrounding the player.
+        /// </summary>
         public Rectangle Rect
         {
             get
