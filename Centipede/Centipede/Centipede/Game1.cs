@@ -101,7 +101,7 @@ namespace Centipede
             {
                 Missile newMissile = new Missile();
 
-                newMissile.build(player.X+15, player.Y-16);
+                newMissile.build(player.X+player.Rect.Width/2-7, player.Y-13);
 
                 lazers.Add(newMissile.getNewMissle());
             }

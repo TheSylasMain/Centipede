@@ -20,7 +20,7 @@ namespace Centipede
         int windowWidth, windowHeight;
         Texture2D image;
 
-        Rectangle source = new Rectangle(0, 1, 16, 16);
+        Rectangle source = new Rectangle(4, 7, 7, 10);
 
         /// <summary>
         /// note: player area is at the bottom 1/6.
@@ -37,14 +37,6 @@ namespace Centipede
             this.image = image;
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
-        }
-
-        /// <summary>
-        /// Called when the Player fires a bullet
-        /// </summary>
-        void fireBullet()
-        {
-            //TODO bullet firing code
         }
 
         public void Update(GameTime gameTime, KeyboardState key, KeyboardState keyOld)
