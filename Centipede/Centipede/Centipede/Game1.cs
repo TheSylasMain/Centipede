@@ -14,12 +14,11 @@ namespace Centipede
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class Game1 : Microsoft.Xna.Framework.Game //TODO remove content in XNA?
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         
-        Texture2D spriteSheetText;
         Rectangle fullrect, stillMissleRect, shootingMissleRect, shotMissleRect, destrect, destrect2;
         bool shot = false;
         List<Rectangle> lazers = new List<Rectangle>();
@@ -45,12 +44,12 @@ namespace Centipede
         protected override void Initialize()
         {
             keyi = Keyboard.GetState();
-            fullrect = new Rectangle(0, 0, 207, 105);
-            shootingMissleRect = new Rectangle(0, 3, 100, 100);
-            stillMissleRect = new Rectangle(104, 52, 100, 50);
-            shotMissleRect = new Rectangle(105, 0, 100, 48);
-            destrect = new Rectangle(100, 400, 100, 100);
-            destrect2 = new Rectangle(100, 300, 100, 100);
+            //fullrect = new Rectangle(0, 0, 207, 105);
+            //shootingMissleRect = new Rectangle(0, 3, 100, 100);
+            //stillMissleRect = new Rectangle(104, 52, 100, 50);
+            shotMissleRect = new Rectangle(24, 2, 1, 6);
+            //destrect = new Rectangle(100, 400, 100, 100);
+            //destrect2 = new Rectangle(100, 300, 100, 100);
             
             base.Initialize();
         }
@@ -64,9 +63,7 @@ namespace Centipede
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
-            spriteSheetText = this.Content.Load<Texture2D>("full");
 
             player = new Player(0, 0, centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
         }
@@ -77,7 +74,7 @@ namespace Centipede
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            
         }
 
         /// <summary>
@@ -97,11 +94,11 @@ namespace Centipede
             //update player
             player.Update(gameTime, key, keyi);
 
-            if (key.IsKeyDown(Keys.Space) && key.IsKeyDown(Keys.Space))
+            if (key.IsKeyDown(Keys.Space) && keyi.IsKeyUp(Keys.Space))
             {
                 Missile newMissile = new Missile();
 
-                newMissile.build(player.X+player.Rect.Width/2-7, player.Y-13);
+                newMissile.build(player.X+player.Rect.Width/2-shotMissleRect.Width*5/2, player.Y-shotMissleRect.Height*5);
 
                 lazers.Add(newMissile.getNewMissle());
             }
@@ -135,13 +132,13 @@ namespace Centipede
             GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
-
-            player.Draw(gameTime, spriteBatch);
             
             foreach (Rectangle missile in lazers)
             {
-                spriteBatch.Draw(spriteSheetText, missile, shotMissleRect, Color.White);
+                spriteBatch.Draw(centipedeSpriteSheet, missile, shotMissleRect, Color.White);
             }
+
+            player.Draw(gameTime, spriteBatch);
 
             spriteBatch.End();
 

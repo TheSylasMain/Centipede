@@ -22,6 +22,9 @@ namespace Centipede
             GraphicsDeviceManager graphics;
             Texture2D full;
             Rectangle newMissle;
+            static Rectangle shotMissleRect = new Rectangle(24, 2, 1, 6);
+            int scale = 5;
+            
             public Missile()
             {
                 graphics = new GraphicsDeviceManager(this);
@@ -30,7 +33,7 @@ namespace Centipede
             }
             public void build(float x, float y)
             {
-                newMissle = new Rectangle((int)x, (int)y, 16, 16);
+                newMissle = new Rectangle((int)x, (int)y, shotMissleRect.Width*scale, shotMissleRect.Height*scale);
             }
 
             public Rectangle getNewMissle()

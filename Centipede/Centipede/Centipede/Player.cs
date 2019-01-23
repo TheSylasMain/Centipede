@@ -16,7 +16,7 @@ namespace Centipede
     {
         float x, y;
         float speed = 5; //spped of player movement
-        float scale = 3; //scale of player
+        float scale = 5; //scale of player
         int windowWidth, windowHeight;
         Texture2D image;
 
