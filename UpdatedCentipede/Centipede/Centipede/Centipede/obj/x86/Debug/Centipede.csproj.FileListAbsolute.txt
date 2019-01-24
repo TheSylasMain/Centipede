@@ -1,0 +1,36 @@
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Centipede.exe
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Centipede.pdb
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\Centipede.exe
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\Centipede.pdb
+C:\Users\229133\Desktop\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\Centipede.csprojResolveAssemblyReference.cache
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Centipede.exe
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Centipede.pdb
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\Centipede.csprojResolveAssemblyReference.cache
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\Centipede.exe
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\obj\x86\Debug\Centipede.pdb
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Content\spiderTrans.xnb
+C:\Users\147527\Downloads\Centipede-master\Centipede-master\Centipede\Centipede\Centipede\bin\x86\Debug\Content\full.xnb

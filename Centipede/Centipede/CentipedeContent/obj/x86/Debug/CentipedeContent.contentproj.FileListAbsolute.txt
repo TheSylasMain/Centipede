@@ -1,3 +1,0 @@
-\\Fisd-student1\hs\lshs\131592\Documents\GitHub\Centipede\Centipede\Centipede\CentipedeContent\obj\x86\Debug\CentipedeContent.contentprojResolveAssemblyReference.cache
-\\Fisd-student1\hs\chs\148439\Documents\GitHub\Centipede\Centipede\Centipede\CentipedeContent\obj\x86\Debug\CentipedeContent.contentprojResolveAssemblyReference.cache
-C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\CentipedeContent\obj\x86\Debug\CentipedeContent.contentprojResolveAssemblyReference.cache
