@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
+      <Output>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
       <Time>2019-01-24T11:42:30-06:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\spiderTrans.xnb</Output>
+      <Output>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\spiderTrans.xnb</Output>
       <Time>2019-01-24T11:42:30-06:00</Time>
     </Item>
     <Item>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\full.xnb</Output>
-      <Time>2019-01-24T11:42:30-06:00</Time>
+      <Output>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\full.xnb</Output>
+      <Time>2019-01-24T14:15:32.2935598-06:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -34,7 +34,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Output>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
       <Time>2019-01-24T13:59:06.73939-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -44,10 +44,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\Centipede\Centipede\CentipedeContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\Centipede\Centipede\Centipede\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\Centipede\Centipede\Centipede\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\UpdatedCentipede\Centipede\CentipedeContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\UpdatedCentipede\Centipede\Centipede\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\147527\Downloads\Centipede-CentipedeFinalFINAL1a\Centipede-CentipedeFinalFINAL1a\UpdatedCentipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

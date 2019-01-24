@@ -123,6 +123,8 @@ namespace Centipede
                 this.Exit();
 
             // TODO: Add your update logic here
+            keyi = key;
+            key = Keyboard.GetState();
             if (!endGame)
             {
                 Boolean added = false;
@@ -140,7 +142,7 @@ namespace Centipede
 
                 }
 
-                if (!spiderOn && gameTime.TotalGameTime.TotalMilliseconds % 5000 < 1)
+                if (!spiderOn && gameTime.TotalGameTime.TotalMilliseconds % 15000 < 1)
                 {
                     spider = new Spider(graphics, spriteSheet);
                     spiderOn = true;
@@ -157,22 +159,21 @@ namespace Centipede
                         if (lazers.ElementAt(i).Intersects(spider.getPos()))
                         {
                             spider = null;
-                            spiderOn = false;                            
+                            spiderOn = false;
                             break;
                         }
                     }
-          
+
                 }
 
 
                 if (spiderOn)
                     spider.Update(graphics, gameTime, mushrooms);
 
-                keyi = key;
-                key = Keyboard.GetState();
+                
 
                 player.Update(gameTime, key, keyi);
-                if (key.IsKeyDown(Keys.Space) && keyi.IsKeyDown(Keys.Space))
+                if (key.IsKeyDown(Keys.Space) && !keyi.IsKeyDown(Keys.Space))
                 {
                     Missile newMissile = new Missile();
 
@@ -201,6 +202,18 @@ namespace Centipede
 
                 c1.Move();
             }
+            else
+            {
+                if(key.IsKeyDown(Keys.R) && !keyi.IsKeyDown(Keys.R))
+                {
+                    endGame = false;
+                    spider = null;
+                    spiderOn = false;
+                    Initialize();
+                    LoadContent();
+                }             
+            }
+
             base.Update(gameTime);
         }
 
