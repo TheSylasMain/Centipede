@@ -50,7 +50,7 @@ namespace Centipede
             shotMissleRect = new Rectangle(24, 2, 1, 6);
             //destrect = new Rectangle(100, 400, 100, 100);
             //destrect2 = new Rectangle(100, 300, 100, 100);
-            
+
             base.Initialize();
         }
 
@@ -120,6 +120,13 @@ namespace Centipede
                     }
                 }
             }
+
+            //TODO test
+            if (gameTime.TotalGameTime >= new TimeSpan(0, 0, 2))
+            {
+                player.Die();
+            }
+
             base.Update(gameTime);
         }
 

@@ -20,7 +20,11 @@ namespace Centipede
         int windowWidth, windowHeight;
         Texture2D image;
 
-        Rectangle source = new Rectangle(4, 7, 7, 10);
+        Rectangle source;
+        Animation animation;
+        Rectangle alive;
+        Rectangle[] dead;
+        int animationTimer;
 
         /// <summary>
         /// note: player area is at the bottom 1/6.
@@ -37,51 +41,87 @@ namespace Centipede
             this.image = image;
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
+
+            Animation1 = Animation.Alive;
+            animationTimer = 0;
+            alive = new Rectangle(4, 7, 7, 10);
+            dead = new Rectangle[8];
+            for (int i = 0; i < dead.Length; i++)
+            {
+                dead[i] = new Rectangle(34 + i * 17, 0, 16, 8);
+            }
+            source = alive;
         }
 
         public void Update(GameTime gameTime, KeyboardState key, KeyboardState keyOld)
         {
-            //movement
-            if (key.IsKeyDown(Keys.Right) && key.IsKeyUp(Keys.Left))
+            if(Animation1==Animation.Alive)
             {
-                x += speed;
-            }
-            if (key.IsKeyDown(Keys.Left) && key.IsKeyUp(Keys.Right))
-            {
-                x -= speed;
-            }
-            if (key.IsKeyDown(Keys.Up) && key.IsKeyUp(Keys.Down))
-            {
-                y -= speed;
-            }
-            if (key.IsKeyDown(Keys.Down) && key.IsKeyUp(Keys.Up))
-            {
-                y += speed;
-            }
+                //movement
+                if (key.IsKeyDown(Keys.Right) && key.IsKeyUp(Keys.Left))
+                {
+                    x += speed;
+                }
+                if (key.IsKeyDown(Keys.Left) && key.IsKeyUp(Keys.Right))
+                {
+                    x -= speed;
+                }
+                if (key.IsKeyDown(Keys.Up) && key.IsKeyUp(Keys.Down))
+                {
+                    y -= speed;
+                }
+                if (key.IsKeyDown(Keys.Down) && key.IsKeyUp(Keys.Up))
+                {
+                    y += speed;
+                }
 
-            //wall collision
-            Rectangle rect = Rect;
-            if (rect.Right>windowWidth)
-            {
-                x = windowWidth - rect.Width;
+                //wall collision
+                Rectangle rect = Rect;
+                if (rect.Right > windowWidth)
+                {
+                    x = windowWidth - rect.Width;
+                }
+                else if (rect.Left < 0)
+                {
+                    x = 0;
+                }
+                if (rect.Bottom > windowHeight)
+                {
+                    y = windowHeight - rect.Height;
+                }
+                else if (rect.Top < windowHeight / 6 * 5)//can't move above bottom 1/6 of the screen
+                {
+                    y = windowHeight / 6 * 5;
+                }
             }
-            else if(rect.Left<0)
+            else if(animation==Animation.Dead)
             {
-                x = 0;
-            }
-            if(rect.Bottom>windowHeight)
-            {
-                y = windowHeight - rect.Height;
-            }
-            else if(rect.Top<windowHeight/6*5)//can't move above bottom 1/6 of the screen
-            {
-                y = windowHeight / 6 * 5;
+                animationTimer++;
+                if (animationTimer < dead.Length * 4)
+                {
+                    source = dead[animationTimer / 4];
+                }
+                else
+                {
+                    source = new Rectangle(0, 1, 1, 1);
+                }
             }
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(image, Rect, source, Color.White);
+        }
+
+        public void Die()
+        {
+            Animation1 = Animation.Dead;
+        }
+
+        enum Animation
+        {
+            Alive,
+            Dead
         }
 
         public float X
@@ -144,6 +184,31 @@ namespace Centipede
             set
             {
                 speed = value;
+            }
+        }
+
+        private Animation Animation1
+        {
+            get
+            {
+                return animation;
+            }
+
+            set
+            {
+                if (value == Animation.Alive)
+                {
+                    source = alive;
+                }
+                if (value == Animation.Dead && animation==Animation.Alive)
+                {
+                    source = dead[0];
+                    animationTimer = 0;
+                    x -= 4 * scale;
+                    Console.WriteLine("test");
+                }
+
+                animation = value;
             }
         }
     }

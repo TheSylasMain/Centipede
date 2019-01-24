@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
-      <Time>2019-01-17T17:44:55.8692463-06:00</Time>
+      <Output>C:\Users\131592\Desktop\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
+      <Time>2019-01-17T13:20:26.3769924-06:00</Time>
     </Item>
     <Item>
       <Source>full.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\full.xnb</Output>
-      <Time>2019-01-22T19:22:44.4048565-06:00</Time>
+      <Output>C:\Users\131592\Desktop\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\full.xnb</Output>
+      <Time>2019-01-24T12:54:43.2151628-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -26,10 +26,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\CentipedeContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\131592\Desktop\GitHub\Centipede\Centipede\Centipede\CentipedeContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\131592\Desktop\GitHub\Centipede\Centipede\Centipede\Centipede\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\131592\Desktop\GitHub\Centipede\Centipede\Centipede\Centipede\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\131592\Desktop\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -57,8 +57,8 @@
         <Value>2011-09-01T16:22:30-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2018-09-08T16:27:57.2753954-05:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2017-05-17T12:17:11.6083928-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
