@@ -37,6 +37,7 @@ namespace Centipede
 
         Player player;
 
+        Centipede c1;
 
         public Game1()
         {
@@ -56,6 +57,7 @@ namespace Centipede
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            IsMouseVisible = true;
             mushrooms = new List<Mushroom>();
             for (int i = 0; i < 25; i++)
             {
@@ -87,6 +89,7 @@ namespace Centipede
             spriteSheet = Content.Load<Texture2D>("spiderTrans");
             spriteSheetText = this.Content.Load<Texture2D>("full");
             player = new Player(0, 0, centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            c1 = new Centipede(centipedeSpriteSheet, 3, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, mushrooms);
             //spider = new Spider(graphics, spriteSheet);
         }
 
@@ -172,6 +175,8 @@ namespace Centipede
                 }
             }
 
+            c1.Move();
+
             base.Update(gameTime);
         }
 
@@ -205,6 +210,7 @@ namespace Centipede
                 spriteBatch.Draw(spriteSheetText, missile, shotMissleRect, Color.White);
             }
 
+            c1.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
