@@ -14,7 +14,7 @@ namespace Centipede
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game //TODO remove content in XNA?
+    public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -24,13 +24,10 @@ namespace Centipede
 
         List<Mushroom> mushrooms;
         Spider spider;
-        Texture2D spriteSheet;
         Boolean spiderOn;
 
-
-        Texture2D spriteSheetText;
-        Rectangle fullrect, stillMissleRect, shootingMissleRect, shotMissleRect, destrect, destrect2;
-        bool shot = false;
+        Rectangle shotMissleRect;
+        bool shot = false; //why does this exist?
         List<Rectangle> lazers = new List<Rectangle>();
         
         KeyboardState key, keyi;
@@ -60,12 +57,7 @@ namespace Centipede
             }
             
             keyi = Keyboard.GetState();
-            fullrect = new Rectangle(0, 0, 207, 105);
-            shootingMissleRect = new Rectangle(0, 3, 100, 100);
-            stillMissleRect = new Rectangle(104, 52, 100, 50);
             shotMissleRect = new Rectangle(24, 2, 1, 6);
-            destrect = new Rectangle(100, 400, 100, 100);
-            destrect2 = new Rectangle(100, 300, 100, 100);
             
             graphics.PreferredBackBufferHeight = 1000;
             graphics.PreferredBackBufferWidth = 800;
@@ -84,8 +76,6 @@ namespace Centipede
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
-            spriteSheet = Content.Load<Texture2D>("spiderTrans");
-            spriteSheetText = this.Content.Load<Texture2D>("full");
             player = new Player(centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             c1 = new Centipede(centipedeSpriteSheet, 3, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, mushrooms);
             //spider = new Spider(graphics, spriteSheet);
@@ -132,7 +122,7 @@ namespace Centipede
                 {
 
                     Rectangle hold = lazers.ElementAt(i);
-                    hold.Y -= 3;
+                    hold.Y -= 10;
                     lazers.Remove(lazers.ElementAt(i));
                     if (lazers.Count > 0)
                     {
@@ -162,7 +152,7 @@ namespace Centipede
             //update spider
             if (!spiderOn && gameTime.TotalGameTime.TotalMilliseconds % 5000 < 1)
             {
-                spider = new Spider(graphics, spriteSheet);
+                spider = new Spider(graphics, centipedeSpriteSheet);
                 spiderOn = true;
             }
             else if (spiderOn && gameTime.TotalGameTime.TotalMilliseconds % 25000 < 1)
@@ -207,7 +197,7 @@ namespace Centipede
 
             //draw spider
             if(spiderOn)
-            spriteBatch.Draw(spriteSheet, spider.getPos(), spider.getSpiderTexture(), Color.White);
+            spriteBatch.Draw(centipedeSpriteSheet, spider.getPos(), spider.getSpiderTexture(), Color.White);
             
             spriteBatch.End();
 

@@ -20,7 +20,6 @@ namespace Centipede
     class Missile : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        Texture2D full;
         Rectangle newMissle;
         static Rectangle shotMissleRect = new Rectangle(24, 2, 1, 6);
         int scale = 5;

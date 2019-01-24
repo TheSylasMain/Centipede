@@ -38,7 +38,6 @@ C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\obj\x86\
 C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\obj\x86\Debug\Centipede.exe
 C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\obj\x86\Debug\Centipede.pdb
 C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb
-C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\full.xnb
 C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Centipede.exe
 C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Centipede.pdb
 C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.dll

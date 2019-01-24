@@ -10,15 +10,6 @@
       <Output>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
       <Time>2019-01-17T17:44:55.8692463-06:00</Time>
     </Item>
-    <Item>
-      <Source>full.png</Source>
-      <Name>full</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\full.xnb</Output>
-      <Time>2019-01-22T19:22:44.4048565-06:00</Time>
-    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{D66C2A6E-F8DE-4CEE-BB09-B7E7A3BDD31A}</ContentProjectGUID>
