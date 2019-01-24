@@ -17,31 +17,29 @@ namespace Centipede
     using Microsoft.Xna.Framework.Media;
 
    
-        class Missile : Microsoft.Xna.Framework.Game
-        {
-            GraphicsDeviceManager graphics;
-            Texture2D full;
-            Rectangle newMissle;
-            static Rectangle shotMissleRect = new Rectangle(24, 2, 1, 6);
-            int scale = 5;
+    class Missile : Microsoft.Xna.Framework.Game
+    {
+        GraphicsDeviceManager graphics;
+        Texture2D full;
+        Rectangle newMissle;
+        static Rectangle shotMissleRect = new Rectangle(24, 2, 1, 6);
+        int scale = 5;
             
-            public Missile()
-            {
-                graphics = new GraphicsDeviceManager(this);
-                Content.RootDirectory = "Content";
-
-            }
-            public void build(float x, float y)
-            {
-                newMissle = new Rectangle((int)x, (int)y, shotMissleRect.Width*scale, shotMissleRect.Height*scale);
-            }
-
-            public Rectangle getNewMissle()
-            {
-                return newMissle;
-            }
-
+        public Missile()
+        {
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
 
         }
+        public void build(float x, float y)
+        {
+            newMissle = new Rectangle((int)x, (int)y, shotMissleRect.Width*scale, shotMissleRect.Height*scale);
+        }
+
+        public Rectangle getNewMissle()
+        {
+            return newMissle;
+        }
     }
+}
 
