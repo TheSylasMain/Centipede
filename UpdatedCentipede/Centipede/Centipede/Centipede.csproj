@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Centipede.cs" />
-    <Compile Include="Missile.cs" />
+    <Compile Include="Missle.cs" />
     <Compile Include="Mushroom.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

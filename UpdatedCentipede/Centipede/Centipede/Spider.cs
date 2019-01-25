@@ -30,8 +30,8 @@ namespace Centipede
 
 
             /**These are for changing the width and height of the spider, in case it needs resizing**/
-            width = 15 * 3;
-            height = 8 * 3;
+            width = 15 * 5;
+            height = 8 * 5;
 
 
             /**This  controls whether or not the spider will spawn on the left side, or right side**/
@@ -52,7 +52,7 @@ namespace Centipede
             pos = new Rectangle((int)x, (int)y, width, height);
 
             /**This is the main rectangle for the spider's textures**/
-            spiderRect = new Rectangle(0, 0, 15, 8);
+            spiderRect = new Rectangle(0, 54, 15, 8);
 
             changeX = 2;
             changeY = 3;
@@ -109,8 +109,8 @@ namespace Centipede
             pos.X = (int)x;
             pos.Y = (int)y;
 
-            if(gameTime.TotalGameTime.TotalMilliseconds % 750 < 1)
-            checkMushroom(mushrooms);
+            if (gameTime.TotalGameTime.TotalMilliseconds % 750 < 1)
+                checkMushroom(mushrooms);
 
         }
 

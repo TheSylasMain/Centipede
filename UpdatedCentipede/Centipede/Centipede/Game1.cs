@@ -18,38 +18,31 @@ namespace Centipede
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        
         Texture2D centipedeSpriteSheet;
         Random rand = new Random();
 
         List<Mushroom> mushrooms;
         Spider spider;
-        Texture2D spriteSheet;
         Boolean spiderOn;
 
         SpriteFont font1;
-        Texture2D spriteSheetText;
-        Rectangle fullrect, stillMissleRect, shootingMissleRect, shotMissleRect, destrect, destrect2;
+        Vector2 text;
+        bool endGame;
+        Rectangle shotMissleRect;
         bool shot = false;
         List<Rectangle> lazers = new List<Rectangle>();
-
+        
         KeyboardState key, keyi;
 
         Player player;
 
-        Boolean endGame;
-
-        Centipede c1;
-
-        Vector2 text;
+        Centipede centipede;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferHeight = 1000;
-            graphics.PreferredBackBufferWidth = 800;
-
         }
 
         /// <summary>
@@ -60,26 +53,25 @@ namespace Centipede
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
             IsMouseVisible = true;
+
             mushrooms = new List<Mushroom>();
             for (int i = 0; i < 25; i++)
             {
                 mushrooms.Add(new Mushroom(Content, this, rand));
             }
-
+            
             keyi = Keyboard.GetState();
-            fullrect = new Rectangle(0, 0, 207, 105);
-            shootingMissleRect = new Rectangle(0, 3, 100, 100);
-            stillMissleRect = new Rectangle(104, 52, 100, 50);
-            shotMissleRect = new Rectangle(105, 0, 100, 48);
-            destrect = new Rectangle(100, 400, 100, 100);
-            destrect2 = new Rectangle(100, 300, 100, 100);
+            shotMissleRect = new Rectangle(24, 2, 1, 6);
 
             endGame = false;
 
             text = new Vector2(100, 300);
 
+            graphics.PreferredBackBufferHeight = 1000;
+            graphics.PreferredBackBufferWidth = 800;
+            graphics.ApplyChanges();
+            
             base.Initialize();
         }
 
@@ -92,12 +84,9 @@ namespace Centipede
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
-            spriteSheet = Content.Load<Texture2D>("spiderTrans");
-            spriteSheetText = this.Content.Load<Texture2D>("full");
-            player = new Player(GraphicsDevice.Viewport.Width/2, GraphicsDevice.Viewport.Height / 2, centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-            c1 = new Centipede(centipedeSpriteSheet, 3, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, mushrooms);
+            player = new Player(centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+            centipede = new Centipede(centipedeSpriteSheet, 3, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, mushrooms);
             font1 = Content.Load<SpriteFont>("SpriteFont1");
             //spider = new Spider(graphics, spriteSheet);
         }
@@ -108,7 +97,7 @@ namespace Centipede
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            
         }
 
         /// <summary>
@@ -122,12 +111,47 @@ namespace Centipede
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
             keyi = key;
             key = Keyboard.GetState();
-            if (!endGame)
+
+            if(!endGame)
             {
-                Boolean added = false;
+                //update player
+                player.Update(gameTime, key, keyi);
+
+                //update lazers
+                if (key.IsKeyDown(Keys.Space) && keyi.IsKeyUp(Keys.Space))
+                {
+                    Missile newMissile = new Missile();
+
+                    newMissile.build(player.X + player.Rect.Width / 2 - shotMissleRect.Width * 5 / 2, player.Y - shotMissleRect.Height * 5);
+
+                    lazers.Add(newMissile.getNewMissle());
+                }
+                if (lazers.Count > 0)
+                {
+                    for (int i = 0; i < lazers.Count; i++)
+                    {
+
+                        Rectangle hold = lazers.ElementAt(i);
+                        hold.Y -= 10;
+                        lazers.Remove(lazers.ElementAt(i));
+                        if (lazers.Count > 0)
+                        {
+                            lazers.Insert(i, hold);
+                        }
+                        else
+                        {
+                            lazers.Add(hold);
+                        }
+                    }
+                }
+
+                //update centipede
+                centipede.Move();
+
+                //update mushrooms
+                bool added = false;
                 for (int i = 0; i < 25; i++)
                 {
 
@@ -138,13 +162,12 @@ namespace Centipede
                         mushrooms.Add(new Mushroom(Content, this, rand));
                         added = true;
                     }
-
-
                 }
 
-                if (!spiderOn && gameTime.TotalGameTime.TotalMilliseconds % 15000 < 1)
+                //update spider
+                if (!spiderOn && gameTime.TotalGameTime.TotalMilliseconds % 5000 < 1)
                 {
-                    spider = new Spider(graphics, spriteSheet);
+                    spider = new Spider(graphics, centipedeSpriteSheet);
                     spiderOn = true;
                 }
                 else if (spiderOn)
@@ -163,55 +186,21 @@ namespace Centipede
                             break;
                         }
                     }
-
                 }
-
 
                 if (spiderOn)
                     spider.Update(graphics, gameTime, mushrooms);
-
-                
-
-                player.Update(gameTime, key, keyi);
-                if (key.IsKeyDown(Keys.Space) && !keyi.IsKeyDown(Keys.Space))
-                {
-                    Missile newMissile = new Missile();
-
-                    newMissile.build(player.X + 15, player.Y - 16);
-
-                    lazers.Add(newMissile.getNewMissle());
-                }
-                if (lazers.Count > 0)
-                {
-                    for (int i = 0; i < lazers.Count; i++)
-                    {
-
-                        Rectangle hold = lazers.ElementAt(i);
-                        hold.Y -= 3;
-                        lazers.Remove(lazers.ElementAt(i));
-                        if (lazers.Count > 0)
-                        {
-                            lazers.Insert(i, hold);
-                        }
-                        else
-                        {
-                            lazers.Add(hold);
-                        }
-                    }
-                }
-
-                c1.Move();
             }
             else
             {
-                if(key.IsKeyDown(Keys.R) && !keyi.IsKeyDown(Keys.R))
+                if (key.IsKeyDown(Keys.R) && !keyi.IsKeyDown(Keys.R))
                 {
                     endGame = false;
                     spider = null;
                     spiderOn = false;
                     Initialize();
                     LoadContent();
-                }             
+                }
             }
 
             base.Update(gameTime);
@@ -225,42 +214,42 @@ namespace Centipede
         {
             GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
-            spriteBatch.Begin();
-            if (!endGame)
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
+            
+            if(!endGame)
             {
-                for (int i = 0; i < mushrooms.Count; i++)
-                {
-
-                    spriteBatch.Draw(mushrooms[i].spriteSheet, mushrooms[i].mushroom, mushrooms[i].s_mushroom, Color.White);
-                }
-
-                if (spiderOn)
-                    spriteBatch.Draw(spriteSheet, spider.getPos(), spider.getSpiderTexture(), Color.White);
-
-                spriteBatch.End();
-
-                spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
-                player.Draw(gameTime, spriteBatch);
-
-
+                //draw lazers
                 foreach (Rectangle missile in lazers)
                 {
-                    spriteBatch.Draw(spriteSheetText, missile, shotMissleRect, Color.White);
+                    spriteBatch.Draw(centipedeSpriteSheet, missile, shotMissleRect, Color.White);
                 }
 
-                c1.Draw(spriteBatch);
+                //draw player
+                player.Draw(gameTime, spriteBatch);
+
+                //draw centipede
+                centipede.Draw(spriteBatch);
+
+                //draw mushrooms
+                for (int i = 0; i < mushrooms.Count; i++)
+                {
+                    spriteBatch.Draw(mushrooms[i].spriteSheet, mushrooms[i].getPosition(), mushrooms[i].s_mushroom, Color.White);
+                }
+
+                //draw spider
+                if (spiderOn)
+                    spriteBatch.Draw(centipedeSpriteSheet, spider.getPos(), spider.getSpiderTexture(), Color.White);
             }
             else
             {
                 spriteBatch.DrawString(font1, "Game Over! Press R to restart!", text, Color.White);
             }
+
             spriteBatch.End();
+
             base.Draw(gameTime);
         }
-
-
-
-        /**Add method to check if spider has been hit, or player has been hit, this'll probably go in the generic Enemy class Rizvee is working on*/
+        
+        //Add method to check if spider has been hit, or player has been hit, this'll probably go in the generic Enemy class Rizvee is working on
     }
 }

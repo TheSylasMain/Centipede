@@ -26,7 +26,7 @@ namespace Centipede
         int rotation = 180;
         int timer = 0;
 
-        
+
 
         public Centipede(Texture2D spritesheet, int l, int w, int h, List<Mushroom> shrooms)
         {
@@ -35,7 +35,7 @@ namespace Centipede
             length = l;
             this.width = w;
             this.heigth = h;
-            headPoint = length * 48;
+            headPoint = length * 80;
             mushrooms = shrooms;
 
             makeCentipede();
@@ -47,13 +47,15 @@ namespace Centipede
             {
                 if (i == 0)
                 {
-                    body.Add(new Rectangle(headPoint, 4, 48, 24));
+                    //body.Add(new Rectangle(headPoint, 4, 48, 24));
+                    body.Add(new Rectangle(headPoint, 4, 80, 40));
                     source.Add(new Rectangle(0, 18, 16, 8));
                     incrementValues.Add(1);
                 }
                 else
                 {
-                    body.Add(new Rectangle(headPoint - (i * 48), 4, 48, 24));
+                    //body.Add(new Rectangle(headPoint - (i * 48), 4, 48, 24));
+                    body.Add(new Rectangle(headPoint - (i * 40), 4, 80, 40));
                     source.Add(new Rectangle(0, 36, 16, 8));
                     incrementValues.Add(1);
                 }
@@ -110,7 +112,7 @@ namespace Centipede
         public void Draw(SpriteBatch spriteBatch)
         {
             for (int i = 0; i < length; i++)
-                spriteBatch.Draw(spriteSheet, body[i], source[i], Color.White, MathHelper.ToRadians(rotation), new Vector2(body[i].Width / 2, body[i].Height / 2), SpriteEffects.None, 0);
+                spriteBatch.Draw(spriteSheet, new Rectangle(body[i].X+body[i].Width/2, body[i].Y+body[i].Height/2, body[i].Width, body[i].Height), source[i], Color.White, MathHelper.ToRadians(rotation), new Vector2(source[i].Width / 2, source[i].Height / 2), SpriteEffects.None, 0);
         }
     }
 }

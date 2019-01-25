@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -16,11 +16,11 @@ namespace Centipede
     {
         float x, y;
         float speed = 5; //spped of player movement
-        float scale = 3; //scale of player
+        float scale = 5; //scale of player
         int windowWidth, windowHeight;
         Texture2D image;
 
-        Rectangle source = new Rectangle(0, 1, 16, 16);
+        Rectangle source = new Rectangle(4, 7, 7, 10);
 
         /// <summary>
         /// note: player area is at the bottom 1/6.
@@ -30,21 +30,13 @@ namespace Centipede
         /// <param name="image"></param>
         /// <param name="windowWidth"></param>
         /// <param name="windowHeight"></param>
-        public Player(float x, float y, Texture2D image, int windowWidth, int windowHeight)
+        public Player(Texture2D image, int windowWidth, int windowHeight)
         {
-            this.x = x;
-            this.y = y;
+            x = windowWidth / 2 - Rect.Width / 2;
+            y = windowHeight / 6 * 5 + windowHeight / 6 / 2 - Rect.Height / 2;
             this.image = image;
             this.windowWidth = windowWidth;
             this.windowHeight = windowHeight;
-        }
-
-        /// <summary>
-        /// Called when the Player fires a bullet
-        /// </summary>
-        void fireBullet()
-        {
-            //TODO bullet firing code
         }
 
         public void Update(GameTime gameTime, KeyboardState key, KeyboardState keyOld)
@@ -69,19 +61,19 @@ namespace Centipede
 
             //wall collision
             Rectangle rect = Rect;
-            if (rect.Right > windowWidth)
+            if (rect.Right>windowWidth)
             {
                 x = windowWidth - rect.Width;
             }
-            else if (rect.Left < 0)
+            else if(rect.Left<0)
             {
                 x = 0;
             }
-            if (rect.Bottom > windowHeight)
+            if(rect.Bottom>windowHeight)
             {
                 y = windowHeight - rect.Height;
             }
-            else if (rect.Top < windowHeight / 6 * 5)//can't move above bottom 1/6 of the screen
+            else if(rect.Top<windowHeight/6*5)//can't move above bottom 1/6 of the screen
             {
                 y = windowHeight / 6 * 5;
             }
@@ -118,6 +110,9 @@ namespace Centipede
             }
         }
 
+        /// <summary>
+        /// The box surrounding the player.
+        /// </summary>
         public Rectangle Rect
         {
             get
