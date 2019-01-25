@@ -191,8 +191,7 @@ namespace Centipede
             //draw mushrooms
             for (int i = 0; i < mushrooms.Count; i++)
             {
-                
-                spriteBatch.Draw(mushrooms[i].spriteSheet, mushrooms[i].mushroom, mushrooms[i].s_mushroom, Color.White);
+                spriteBatch.Draw(mushrooms[i].spriteSheet, mushrooms[i].getPosition(), mushrooms[i].s_mushroom, Color.White);
             }
 
             //draw spider
