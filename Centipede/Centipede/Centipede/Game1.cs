@@ -147,6 +147,9 @@ namespace Centipede
                     }
                 }
 
+                //update centipede
+                centipede.Move();
+
                 //update mushrooms
                 bool added = false;
                 for (int i = 0; i < 25; i++)
