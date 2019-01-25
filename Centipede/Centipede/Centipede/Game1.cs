@@ -18,7 +18,7 @@ namespace Centipede
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
+
         Texture2D centipedeSpriteSheet;
         Random rand = new Random();
 
@@ -27,12 +27,13 @@ namespace Centipede
         Boolean spiderOn;
 
         SpriteFont font1;
+        string restartMessage;
         Vector2 text;
         bool endGame;
         Rectangle shotMissleRect;
         bool shot = false;
         List<Rectangle> lazers = new List<Rectangle>();
-        
+
         KeyboardState key, keyi;
 
         Player player;
@@ -60,18 +61,18 @@ namespace Centipede
             {
                 mushrooms.Add(new Mushroom(Content, this, rand));
             }
-            
+
             keyi = Keyboard.GetState();
             shotMissleRect = new Rectangle(24, 2, 1, 6);
 
             endGame = false;
 
-            text = new Vector2(100, 300);
+            restartMessage = "Game Over! Press R to restart!";
 
             graphics.PreferredBackBufferHeight = 1000;
             graphics.PreferredBackBufferWidth = 800;
             graphics.ApplyChanges();
-            
+
             base.Initialize();
         }
 
@@ -87,7 +88,9 @@ namespace Centipede
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
             player = new Player(centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             centipede = new Centipede(centipedeSpriteSheet, 3, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, mushrooms);
+
             font1 = Content.Load<SpriteFont>("SpriteFont1");
+            text = new Vector2(GraphicsDevice.Viewport.Width / 2 - font1.MeasureString(restartMessage).X / 2, GraphicsDevice.Viewport.Height / 2 - font1.MeasureString(restartMessage).Y / 2);
             //spider = new Spider(graphics, spriteSheet);
         }
 
@@ -97,7 +100,7 @@ namespace Centipede
         /// </summary>
         protected override void UnloadContent()
         {
-            
+
         }
 
         /// <summary>
@@ -114,7 +117,7 @@ namespace Centipede
             keyi = key;
             key = Keyboard.GetState();
 
-            if(!endGame)
+            if (!endGame)
             {
                 //update player
                 player.Update(gameTime, key, keyi);
@@ -215,8 +218,8 @@ namespace Centipede
             GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.Default, RasterizerState.CullNone);
-            
-            if(!endGame)
+
+            if (!endGame)
             {
                 //draw lazers
                 foreach (Rectangle missile in lazers)
@@ -242,14 +245,14 @@ namespace Centipede
             }
             else
             {
-                spriteBatch.DrawString(font1, "Game Over! Press R to restart!", text, Color.White);
+                spriteBatch.DrawString(font1, restartMessage, text, Color.White);
             }
 
             spriteBatch.End();
 
             base.Draw(gameTime);
         }
-        
+
         //Add method to check if spider has been hit, or player has been hit, this'll probably go in the generic Enemy class Rizvee is working on
     }
 }
