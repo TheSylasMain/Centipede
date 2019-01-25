@@ -41,7 +41,5 @@ namespace Centipede
         {
             return mushroom;
         }
-
-
     }
 }

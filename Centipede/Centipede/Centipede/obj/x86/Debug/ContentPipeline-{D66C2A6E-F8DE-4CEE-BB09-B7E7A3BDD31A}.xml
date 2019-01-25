@@ -8,7 +8,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
-      <Time>2019-01-17T17:44:55.8692463-06:00</Time>
+      <Time>2019-01-24T22:06:46.4893467-06:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont1.spritefont</Source>
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2019-01-24T22:10:28.0891164-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

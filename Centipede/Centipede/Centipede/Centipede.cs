@@ -34,7 +34,7 @@ namespace Centipede
             length = l;
             this.width = w;
             this.heigth = h;
-            headPoint = length * 80;
+            headPoint = length * 48;
             mushrooms = shrooms;
 
             makeCentipede();
@@ -46,13 +46,13 @@ namespace Centipede
             {
                 if (i == 0)
                 {
-                    body.Add(new Rectangle(headPoint, 4, 80, 40));
+                    body.Add(new Rectangle(headPoint, 4, 48, 24));
                     source.Add(new Rectangle(0, 18, 16, 8));
                     incrementValues.Add(1);
                 }
                 else
                 {
-                    body.Add(new Rectangle(headPoint - (i * 16), 4, 80, 40));
+                    body.Add(new Rectangle(headPoint - (i * 48), 4, 48, 24));
                     source.Add(new Rectangle(0, 36, 16, 8));
                     incrementValues.Add(1);
                 }
