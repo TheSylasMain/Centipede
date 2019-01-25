@@ -27,6 +27,7 @@ namespace Centipede
         Boolean spiderOn;
 
         SpriteFont font1;
+        string restartMessage;
         Vector2 text;
         bool endGame;
         Rectangle shotMissleRect;
@@ -66,7 +67,7 @@ namespace Centipede
 
             endGame = false;
 
-            text = new Vector2(100, 300);
+            restartMessage = "Game Over! Press R to restart!";
 
             graphics.PreferredBackBufferHeight = 1000;
             graphics.PreferredBackBufferWidth = 800;
@@ -87,7 +88,9 @@ namespace Centipede
             centipedeSpriteSheet = Content.Load<Texture2D>("Arcade - Centipede - General Sprites");
             player = new Player(centipedeSpriteSheet, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             centipede = new Centipede(centipedeSpriteSheet, 3, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height, mushrooms);
+
             font1 = Content.Load<SpriteFont>("SpriteFont1");
+            text = new Vector2(GraphicsDevice.Viewport.Width / 2 - font1.MeasureString(restartMessage).X / 2, GraphicsDevice.Viewport.Height / 2 - font1.MeasureString(restartMessage).Y / 2);
             //spider = new Spider(graphics, spriteSheet);
         }
 
@@ -242,7 +245,7 @@ namespace Centipede
             }
             else
             {
-                spriteBatch.DrawString(font1, "Game Over! Press R to restart!", text, Color.White);
+                spriteBatch.DrawString(font1, restartMessage, text, Color.White);
             }
 
             spriteBatch.End();

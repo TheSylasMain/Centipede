@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
+      <Output>C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb</Output>
       <Time>2019-01-24T23:05:02.4633558-06:00</Time>
     </Item>
     <Item>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2019-01-24T23:05:02.472353-06:00</Time>
+      <Output>C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2019-01-24T23:12:45.6314692-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -26,10 +26,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\CentipedeContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\phili\Documents\GitHub\Centipede\Centipede\Centipede\Centipede\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\CentipedeContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
