@@ -69,3 +69,21 @@ C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\o
 C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\Centipede.exe
 C:\Users\phili\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\Centipede.pdb
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\Centipede.csprojResolveAssemblyReference.cache
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\Centipede.exe
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\obj\x86\Debug\Centipede.pdb
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\Arcade - Centipede - General Sprites.xnb
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Centipede.exe
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Centipede.pdb
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\Rizvee\Documents\GitHub\Centipede\UpdatedCentipede\Centipede\Centipede\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml

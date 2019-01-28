@@ -111,11 +111,13 @@ namespace Centipede
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
 
             keyi = key;
             key = Keyboard.GetState();
+
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || key.IsKeyDown(Keys.Escape))
+                this.Exit();
+            
 
             if(!endGame)
             {
@@ -152,7 +154,7 @@ namespace Centipede
 
                 //update centipede
                 centipede.Move();
-
+                mushrooms = centipede.hitHead(Content, lazers);
                 //update mushrooms
                 bool added = false;
                 for (int i = 0; i < 25; i++)

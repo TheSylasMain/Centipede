@@ -64,55 +64,82 @@ namespace Centipede
 
         public void Move()
         {
-            Rectangle far = new Rectangle(width, 0, 20, heigth);
-            Rectangle close = new Rectangle(-20, 0, 20, heigth);
-
-            timer++;
-
-            //movement
-            for (int i = 0; i < length; i++)
+            if (body.Count != 0)
             {
-                body[i] = new Rectangle(body[i].X + incrementValues[i], body[i].Y, body[i].Width, body[i].Height);
-            }
+                Rectangle far = new Rectangle(width, 0, 20, heigth);
+                Rectangle close = new Rectangle(-20, 0, 20, heigth);
 
-            //turn
-            for (int i = 0; i < length; i++)
-            {
-                if (body[i].Intersects(close) || body[i].Intersects(far))
+                timer++;
+
+                //movement
+                for (int i = 0; i < length; i++)
                 {
-                    incrementValues[i] *= -1;
-                    body[i] = new Rectangle(body[i].X, body[i].Y + body[i].Height, body[i].Width, body[i].Height);
+                    body[i] = new Rectangle(body[i].X + incrementValues[i], body[i].Y, body[i].Width, body[i].Height);
                 }
-            }
 
-            //mushroom collision
-            for (int i = 0; i < length; i++)
-            {
-                for (int j = 0; j < mushrooms.Count; j++)
+                //turn
+                for (int i = 0; i < length; i++)
                 {
-                    if (body[i].Intersects(mushrooms[j].mushroom))
+                    if (body[i].Intersects(close) || body[i].Intersects(far))
                     {
                         incrementValues[i] *= -1;
                         body[i] = new Rectangle(body[i].X, body[i].Y + body[i].Height, body[i].Width, body[i].Height);
                     }
                 }
-            }
 
-            //animation
-            for (int i = 0; i < length; i++)
-            {
+                //mushroom collision
+                for (int i = 0; i < length; i++)
+                {
+                    for (int j = 0; j < mushrooms.Count; j++)
+                    {
+                        if (body[i].Intersects(mushrooms[j].mushroom))
+                        {
+                            incrementValues[i] *= -1;
+                            body[i] = new Rectangle(body[i].X, body[i].Y + body[i].Height, body[i].Width, body[i].Height);
+                        }
+                    }
+                }
 
-                if (source[i].X < 119)
-                    source[i] = new Rectangle(source[i].X + 17, source[i].Y, source[i].Width, source[i].Height);
-                else
-                    source[i] = new Rectangle(0, source[i].Y, source[i].Width, source[i].Height);
+                //animation
+                for (int i = 0; i < length; i++)
+                {
+
+                    if (source[i].X < 119)
+                        source[i] = new Rectangle(source[i].X + 17, source[i].Y, source[i].Width, source[i].Height);
+                    else
+                        source[i] = new Rectangle(0, source[i].Y, source[i].Width, source[i].Height);
+                }
             }
         }
 
+        public List<Mushroom> hitHead(ContentManager content, List<Rectangle> m)
+        {
+            if (body.Count != 0)
+            {
+                for (int i = 0; i < m.Count; i++)
+                {
+                    if (m[i].Intersects(body[0]))
+                    {
+                        while (body.Count > 0)
+                        {
+                            mushrooms.Add(new Mushroom(content, this, body[0].X, body[0].Y));
+                            body.RemoveAt(0);
+                        }
+
+                    }
+                }
+            }
+            return mushrooms;
+        }
+
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            for (int i = 0; i < length; i++)
-                spriteBatch.Draw(spriteSheet, new Rectangle(body[i].X+body[i].Width/2, body[i].Y+body[i].Height/2, body[i].Width, body[i].Height), source[i], Color.White, MathHelper.ToRadians(rotation), new Vector2(source[i].Width / 2, source[i].Height / 2), SpriteEffects.None, 0);
+            if (body.Count != 0)
+            {
+                for (int i = 0; i < length; i++)
+                    spriteBatch.Draw(spriteSheet, new Rectangle(body[i].X + body[i].Width / 2, body[i].Y + body[i].Height / 2, body[i].Width, body[i].Height), source[i], Color.White, MathHelper.ToRadians(rotation), new Vector2(source[i].Width / 2, source[i].Height / 2), SpriteEffects.None, 0);
+            }
         }
     }
 }
