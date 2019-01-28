@@ -155,6 +155,8 @@ namespace Centipede
                 //update centipede
                 centipede.Move();
                 mushrooms = centipede.hitHead(Content, lazers);
+                mushrooms = centipede.hitTail(Content, lazers);
+                centipede.UpdateMushroom(mushrooms);
                 //update mushrooms
                 bool added = false;
                 for (int i = 0; i < 25; i++)
