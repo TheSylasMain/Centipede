@@ -167,6 +167,24 @@ namespace Centipede
                     }
                 }
 
+                //mushroom collision
+                for (int i = 0; i < lazers.Count(); i++)
+                {
+                    for (int j = 0; j < mushrooms.Count(); j++)
+                    {
+                        if (i > 1)
+                        {
+                            if (lazers[i].Intersects(mushrooms[j].mushroom))
+                            {
+                                mushrooms.RemoveAt(j);
+                                i -= 1;
+                                lazers.RemoveAt(i + 1);
+                            }
+                        }
+                    }
+                    
+                }
+
                 //update spider
                 if (!spiderOn && gameTime.TotalGameTime.TotalMilliseconds % 5000 < 1)
                 {
